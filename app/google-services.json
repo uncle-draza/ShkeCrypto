@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "511408114910",
+    "project_id": "pma-projekat-e26cc",
+    "storage_bucket": "pma-projekat-e26cc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:511408114910:android:85cfa9f238f300bd63064f",
+        "android_client_info": {
+          "package_name": "com.example.pma_projekat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "511408114910-hf2e184vb5r8noah8rkjl3qdd93dm7gd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5YcHdxagQ5AjOYOpDZukpbXXkOuBIFfg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "511408114910-hf2e184vb5r8noah8rkjl3qdd93dm7gd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
