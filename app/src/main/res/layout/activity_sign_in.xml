@@ -7,22 +7,6 @@
     android:background="#24272E"
     tools:context=".SignInActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="222dp"
-        android:layout_height="67dp"
-        android:background="#00FF0000"
-        android:fontFamily="sans-serif-light"
-        android:text="Sign in"
-        android:textAlignment="center"
-        android:textColor="#D2B1BE"
-        android:textSize="47sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.332" />
-
     <ImageView
         android:id="@+id/imageViewLogo"
         android:layout_width="264dp"
@@ -38,45 +22,60 @@
         app:layout_constraintVertical_bias="0.0"
         tools:src="@drawable/logo" />
 
-    <EditText
-        android:id="@+id/editTextTextEmailAddress"
-        android:layout_width="320dp"
-        android:layout_height="50dp"
-        android:paddingLeft="20dp"
-        android:background="@drawable/rounded_edit_text"
-        android:ems="10"
-        android:hint="Email"
-        android:drawableStart="@drawable/email_icon"
-        android:drawablePadding="10dp"
-        android:inputType="textEmailAddress"
-        android:textColor="#D2B1BE"
-        android:textColorHint="#3E4C65"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.456" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
         android:layout_width="320dp"
         android:layout_height="50dp"
-        android:paddingLeft="20dp"
         android:background="@drawable/rounded_edit_text"
-        android:ems="10"
-        android:hint="Password"
         android:drawableStart="@drawable/password_icon"
         android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Password"
         android:inputType="textPassword"
-        android:textColorHint="#3E4C65"
+        android:paddingLeft="20dp"
         android:textColor="#D2B1BE"
+        android:textColorHint="#3E4C65"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.558" />
+        app:layout_constraintVertical_bias="0.572" />
 
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_edit_text"
+        android:drawableStart="@drawable/email_icon"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="20dp"
+        android:textColor="#D2B1BE"
+        android:textColorHint="#3E4C65"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.46" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="222dp"
+        android:layout_height="67dp"
+        android:background="#00FF0000"
+        android:fontFamily="sans-serif-light"
+        android:text="Sign in"
+        android:textAlignment="center"
+        android:textColor="#D2B1BE"
+        android:textSize="47sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.336" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button"
