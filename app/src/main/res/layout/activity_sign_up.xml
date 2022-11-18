@@ -13,7 +13,7 @@
         android:layout_height="67dp"
         android:background="#00FF0000"
         android:fontFamily="sans-serif-light"
-        android:text="Sign in"
+        android:text="Sign up"
         android:textAlignment="center"
         android:textColor="#D2B1BE"
         android:textSize="47sp"
@@ -94,14 +94,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65" />
+        app:layout_constraintVertical_bias="0.658" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button"
         android:layout_width="245dp"
         android:layout_height="52dp"
         android:background="@drawable/rounded_button"
-        android:text="Sign in"
+        android:text="Sign up"
         android:textColor="#24272E"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -109,14 +109,14 @@
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.782" />
+        app:layout_constraintVertical_bias="0.828" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="false"
-        android:text="Don't have an account? "
+        android:text="Already have an account? "
         android:textColor="#D2B1BE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -130,8 +130,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="false"
-        android:text="Sign Up"
+        android:text="Sign In"
         android:textColor="#D2B1BE"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
