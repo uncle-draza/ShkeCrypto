@@ -16,12 +16,12 @@
         android:text="Sign in"
         android:textAlignment="center"
         android:textColor="#D2B1BE"
-        android:textSize="48sp"
+        android:textSize="47sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.343" />
+        app:layout_constraintVertical_bias="0.332" />
 
     <ImageView
         android:id="@+id/imageViewLogo"
@@ -42,12 +42,15 @@
         android:id="@+id/editTextTextEmailAddress"
         android:layout_width="320dp"
         android:layout_height="50dp"
+        android:paddingLeft="20dp"
         android:background="@drawable/rounded_edit_text"
         android:ems="10"
         android:hint="Email"
+        android:drawableStart="@drawable/email_icon"
+        android:drawablePadding="10dp"
         android:inputType="textEmailAddress"
         android:textColor="#D2B1BE"
-        android:textColorHint="#D2B1BE"
+        android:textColorHint="#3E4C65"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,16 +61,22 @@
         android:id="@+id/editTextTextPassword"
         android:layout_width="320dp"
         android:layout_height="50dp"
+        android:paddingLeft="20dp"
         android:background="@drawable/rounded_edit_text"
         android:ems="10"
         android:hint="Password"
+        android:drawableStart="@drawable/password_icon"
+        android:drawablePadding="10dp"
         android:inputType="textPassword"
-        android:textColorHint="#D2B1BE"
+        android:textColorHint="#3E4C65"
+        android:textColor="#D2B1BE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.558" />
+
+
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button"
@@ -82,7 +91,7 @@
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.743" />
+        app:layout_constraintVertical_bias="0.782" />
 
     <TextView
         android:id="@+id/textView2"
@@ -96,7 +105,7 @@
         app:layout_constraintHorizontal_bias="0.406"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.963" />
+        app:layout_constraintVertical_bias="0.95" />
 
     <TextView
         android:id="@+id/textView3"
@@ -110,5 +119,5 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.963" />
+        app:layout_constraintVertical_bias="0.95" />
 </androidx.constraintlayout.widget.ConstraintLayout>
