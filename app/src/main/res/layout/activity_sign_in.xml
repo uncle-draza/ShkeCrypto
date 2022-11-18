@@ -24,7 +24,7 @@
 
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/pswdET"
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:background="@drawable/rounded_edit_text"
@@ -43,7 +43,7 @@
         app:layout_constraintVertical_bias="0.572" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/emailET"
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:background="@drawable/rounded_edit_text"
