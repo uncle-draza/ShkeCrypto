@@ -33,6 +33,7 @@ class CurrencyRVAdapter(currencyRVModelArrayList: ArrayList<CurrencyRVModel>, co
         holder.currencyNameTV.text = currencyRVModel.name
         holder.symbolTV.text = currencyRVModel.symbol
         holder.rateTV.text = "$ " + df2.format(currencyRVModel.price)
+        holder.idTV.text = currencyRVModel.idCurrency.toString()
     }
     override fun getItemCount(): Int {
         return currencyRVModelArrayList.size
@@ -42,11 +43,13 @@ class CurrencyRVAdapter(currencyRVModelArrayList: ArrayList<CurrencyRVModel>, co
         var currencyNameTV: TextView
         var symbolTV: TextView
         var rateTV: TextView
+        var idTV: TextView
 
         init {
             currencyNameTV = itemView.findViewById(R.id.idTVCurrencyName)
             symbolTV = itemView.findViewById(R.id.idTVSymbol)
             rateTV = itemView.findViewById(R.id.idTVCurrencyRate)
+            idTV = itemView.findViewById(R.id.currencyID)
         }
     }
 }

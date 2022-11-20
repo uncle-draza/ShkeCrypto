@@ -88,10 +88,11 @@ class MainActivity : AppCompatActivity() {
                         var dataObj:JSONObject = dataArray.getJSONObject(i)
                         var name: String = dataObj.getString("name")
                         var symbol: String = dataObj.getString("symbol")
+                        var id: Int = i + 1
                         var quote:JSONObject = dataObj.getJSONObject("quote")
                         var USD:JSONObject = quote.getJSONObject("USD")
                         var price:Double = USD.getDouble("price")
-                        currencyRVModelArrayList.add(CurrencyRVModel(name,symbol,price))
+                        currencyRVModelArrayList.add(CurrencyRVModel(name,symbol,price,id))
                     }
                     currencyRVAdapter.notifyDataSetChanged()
                 }catch (e: JSONException){
