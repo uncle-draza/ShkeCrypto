@@ -10,9 +10,19 @@ import java.text.FieldPosition
 
 class CurrencyRVAdapter(currencyRVModelArrayList: ArrayList<CurrencyRVModel>, context: Context) : RecyclerView.Adapter<CurrencyRVAdapter.ViewHolder>(){
 
-    private lateinit var currencyRVModelArrayList: ArrayList<CurrencyRVModel>
-    private lateinit var context: Context
-    val df2 = DecimalFormat("#.##")
+    private var currencyRVModelArrayList: ArrayList<CurrencyRVModel>
+    private var context: Context
+    private val df2 = DecimalFormat("#.##")
+
+    init {
+        this.currencyRVModelArrayList = currencyRVModelArrayList
+        this.context = context
+    }
+
+    public fun filterList(filteredList: ArrayList<CurrencyRVModel>){
+        currencyRVModelArrayList = filteredList
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType:Int): CurrencyRVAdapter.ViewHolder{
         val v = LayoutInflater.from(parent.context).inflate(R.layout.currency_rv_item,parent,false)
