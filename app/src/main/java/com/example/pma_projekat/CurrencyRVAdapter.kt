@@ -1,5 +1,6 @@
 package com.example.pma_projekat
 import android.content.Context
+import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
@@ -39,6 +40,20 @@ class CurrencyRVAdapter(currencyRVModelArrayList: ArrayList<CurrencyRVModel>, co
         holder.rateTV.text = "$ " + df2.format(currencyRVModel.price)
         holder.idTV.text = currencyRVModel.idCurrency.toString()
         Picasso.get().load(currencyRVModel.logoURL).into(holder.currencyLogo)
+        holder.change1hTV.text = currencyRVModel.change1h
+
+        if(currencyRVModel.change1hNum.toDouble()<0){
+            holder.changeIncicator.scaleY = -1f
+            holder.changeIncicator.setColorFilter(context.resources.getColor(R.color.digital_red))
+            holder.change1hTV.setTextColor(Color.parseColor("#e44b4a"))
+        }
+        else{
+            holder.changeIncicator.setColorFilter(context.resources.getColor(R.color.digital_green))
+            holder.change1hTV.setTextColor(Color.parseColor("#43d75e"))
+            holder.changeIncicator.scaleY = 1f
+        }
+
+
     }
     override fun getItemCount(): Int {
         return currencyRVModelArrayList.size
@@ -50,6 +65,8 @@ class CurrencyRVAdapter(currencyRVModelArrayList: ArrayList<CurrencyRVModel>, co
         var rateTV: TextView
         var idTV: TextView
         var currencyLogo: ImageView
+        var change1hTV: TextView
+        var changeIncicator: ImageView
 
         init {
             currencyNameTV = itemView.findViewById(R.id.idTVCurrencyName)
@@ -57,6 +74,8 @@ class CurrencyRVAdapter(currencyRVModelArrayList: ArrayList<CurrencyRVModel>, co
             rateTV = itemView.findViewById(R.id.idTVCurrencyRate)
             idTV = itemView.findViewById(R.id.currencyID)
             currencyLogo = itemView.findViewById(R.id.currencyLogo)
+            change1hTV = itemView.findViewById(R.id.currencyChangePercentage)
+            changeIncicator = itemView.findViewById(R.id.changeIndicator)
         }
     }
 }

@@ -20,6 +20,7 @@ import com.bumptech.glide.Glide
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
+import java.text.DecimalFormat
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     
     private lateinit var currencyRVModelArrayList: ArrayList<CurrencyRVModel>
     private lateinit var currencyRVAdapter: CurrencyRVAdapter
-    
+    private val df3 = DecimalFormat("#.###")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,7 +70,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         if(filteredList.isEmpty()){
-            Toast.makeText(this,"Currency not found!", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this,"Currency not found!", Toast.LENGTH_SHORT).show()
         }else{
             currencyRVAdapter.filterList(filteredList)
         }
@@ -95,12 +96,20 @@ class MainActivity : AppCompatActivity() {
                         var USD:JSONObject = quote.getJSONObject("USD")
                         var price:Double = USD.getDouble("price")
                         var urlDoSlike: String = "https://raw.githubusercontent.com/uncle-draza/crypto-logos/master/128x128-dark-mode/" + symbol  +".png"
-                        currencyRVModelArrayList.add(CurrencyRVModel(name,symbol,price,id,urlDoSlike))
+                        var change1h: Double = USD.getDouble("percent_change_1h")
+                        lateinit var change1hString:String
+                        if(change1h>0){
+                            change1hString = "+" + df3.format(change1h) + " %"
+                        }else{
+                            change1hString = df3.format(change1h) + " %"
+                        }
+
+                        currencyRVModelArrayList.add(CurrencyRVModel(name,symbol,price,id,urlDoSlike,change1hString,change1h))
                     }
                     currencyRVAdapter.notifyDataSetChanged()
                 }catch (e: JSONException){
                     e.printStackTrace()
-                    Toast.makeText(this, "Failed to extract JSON data", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, "Failed to extract JSON data", Toast.LENGTH_SHORT).show()
                 }
             }, Response.ErrorListener{
                 loadingPB.visibility = View.GONE

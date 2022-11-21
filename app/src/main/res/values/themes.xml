@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.PMA_PROJEKAT" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">#24272e</item>
         <item name="colorPrimaryVariant">#24272E</item>
         <item name="colorOnPrimary">#FFEB3B</item>
         <!-- Secondary brand color. -->

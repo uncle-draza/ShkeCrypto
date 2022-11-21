@@ -8,14 +8,20 @@
     tools:context=".MainActivity">
 
     <EditText
+        android:id="@+id/idEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/idEditText"
-        android:layout_margin="4dp"
-        android:textColor="#d2b1be"
-        android:textColorHint="#3e4c65"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:drawableStart="@drawable/ic_baseline_search_24"
+        android:background="@drawable/rounded_edit_text"
+        android:drawablePadding="10dp"
         android:hint="Search cryptocurrencies..."
-        />
+        android:textColor="#d2b1be"
+        android:textColorHint="#3e4c65" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
