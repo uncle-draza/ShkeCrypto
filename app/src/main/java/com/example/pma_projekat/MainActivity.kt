@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
                         var quote:JSONObject = dataObj.getJSONObject("quote")
                         var USD:JSONObject = quote.getJSONObject("USD")
                         var price:Double = USD.getDouble("price")
-                        var urlDoSlike: String = "https://raw.githubusercontent.com/uncle-draza/crypto-logos/master/128x128/" + symbol  +".png"
+                        var urlDoSlike: String = "https://raw.githubusercontent.com/uncle-draza/crypto-logos/master/128x128-dark-mode/" + symbol  +".png"
                         currencyRVModelArrayList.add(CurrencyRVModel(name,symbol,price,id,urlDoSlike))
                     }
                     currencyRVAdapter.notifyDataSetChanged()
