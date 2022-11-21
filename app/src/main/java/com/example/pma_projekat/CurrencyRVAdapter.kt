@@ -1,10 +1,14 @@
 package com.example.pma_projekat
 import android.content.Context
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.squareup.picasso.Picasso
 import java.text.DecimalFormat
 import java.text.FieldPosition
 
@@ -34,6 +38,7 @@ class CurrencyRVAdapter(currencyRVModelArrayList: ArrayList<CurrencyRVModel>, co
         holder.symbolTV.text = currencyRVModel.symbol
         holder.rateTV.text = "$ " + df2.format(currencyRVModel.price)
         holder.idTV.text = currencyRVModel.idCurrency.toString()
+        Picasso.get().load(currencyRVModel.logoURL).into(holder.currencyLogo)
     }
     override fun getItemCount(): Int {
         return currencyRVModelArrayList.size
@@ -44,12 +49,14 @@ class CurrencyRVAdapter(currencyRVModelArrayList: ArrayList<CurrencyRVModel>, co
         var symbolTV: TextView
         var rateTV: TextView
         var idTV: TextView
+        var currencyLogo: ImageView
 
         init {
             currencyNameTV = itemView.findViewById(R.id.idTVCurrencyName)
             symbolTV = itemView.findViewById(R.id.idTVSymbol)
             rateTV = itemView.findViewById(R.id.idTVCurrencyRate)
             idTV = itemView.findViewById(R.id.currencyID)
+            currencyLogo = itemView.findViewById(R.id.currencyLogo)
         }
     }
 }

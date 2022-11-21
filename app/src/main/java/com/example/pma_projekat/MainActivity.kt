@@ -1,5 +1,6 @@
 package com.example.pma_projekat
 
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -15,6 +16,7 @@ import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.bumptech.glide.Glide
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -92,7 +94,8 @@ class MainActivity : AppCompatActivity() {
                         var quote:JSONObject = dataObj.getJSONObject("quote")
                         var USD:JSONObject = quote.getJSONObject("USD")
                         var price:Double = USD.getDouble("price")
-                        currencyRVModelArrayList.add(CurrencyRVModel(name,symbol,price,id))
+                        var urlDoSlike: String = "https://raw.githubusercontent.com/uncle-draza/crypto-logos/master/128x128/" + symbol  +".png"
+                        currencyRVModelArrayList.add(CurrencyRVModel(name,symbol,price,id,urlDoSlike))
                     }
                     currencyRVAdapter.notifyDataSetChanged()
                 }catch (e: JSONException){

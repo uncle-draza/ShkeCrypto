@@ -1,4 +1,7 @@
 package com.example.pma_projekat
 
-class CurrencyRVModel (var name:String, var symbol:String, var price: Double, var idCurrency:Int){
+import android.graphics.drawable.Drawable
+import android.media.Image
+
+class CurrencyRVModel (var name:String, var symbol:String, var price: Double, var idCurrency:Int, var logoURL: String){
 }

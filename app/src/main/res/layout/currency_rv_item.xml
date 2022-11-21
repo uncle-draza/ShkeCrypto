@@ -30,7 +30,6 @@
             android:layout_height="53dp"
             android:layout_margin="3dp"
             android:layout_toRightOf="@id/currencyID"
-            android:background="#d2b1be"
             />
 
         <ImageView
