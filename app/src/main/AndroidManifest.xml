@@ -7,9 +7,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ikonica"
+        android:icon="@mipmap/novaikonica"
         android:label="Shke Crypto"
-        android:roundIcon="@mipmap/ikonica_round"
+        android:roundIcon="@mipmap/novaikonica_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PMA_PROJEKAT"
         tools:targetApi="31">

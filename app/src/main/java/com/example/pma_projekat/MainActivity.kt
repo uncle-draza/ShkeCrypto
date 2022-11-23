@@ -12,6 +12,7 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
@@ -39,12 +40,16 @@ class MainActivity : AppCompatActivity() {
         searchEdit = findViewById(R.id.idEditText)
         currenciesRV = findViewById(R.id.idRVCurrencies)
         loadingPB = findViewById(R.id.idPBLoading)
+
         
         currencyRVModelArrayList = arrayListOf<CurrencyRVModel>()
         currencyRVAdapter = CurrencyRVAdapter(currencyRVModelArrayList,this)
         currenciesRV.layoutManager = LinearLayoutManager(this)
         currenciesRV.adapter = currencyRVAdapter
+
+
         getCurrencyData()
+
 
         searchEdit.addTextChangedListener(object : TextWatcher {
 
@@ -60,7 +65,13 @@ class MainActivity : AppCompatActivity() {
                                        before: Int, count: Int) {
             }
         })
+
+
     }
+
+
+
+
 
     private fun filterCurrencies(currency: String){
         var filteredList = ArrayList<CurrencyRVModel>()
@@ -77,6 +88,7 @@ class MainActivity : AppCompatActivity() {
     }
     
     private fun getCurrencyData(){
+
         loadingPB.visibility = View.VISIBLE
         val url: String = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest" 
         var requestQueue:RequestQueue = Volley.newRequestQueue(this)
@@ -85,6 +97,7 @@ class MainActivity : AppCompatActivity() {
             com.android.volley.Request.Method.GET,url,null,
             Response.Listener{response ->
                 loadingPB.visibility = View.GONE
+
                 try {
                     var dataArray: JSONArray = response.getJSONArray("data")
                     for(i in 0..dataArray.length()){
@@ -124,5 +137,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         requestQueue.add(jsonObjectRequest)
+
     }
 }

@@ -7,6 +7,14 @@
     android:background="#24272E"
     tools:context=".MainActivity">
 
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idRVCurrencies"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/idEditText" />
+
     <EditText
         android:id="@+id/idEditText"
         android:layout_width="match_parent"
@@ -22,12 +30,7 @@
         android:textColor="#d2b1be"
         android:textColorHint="#3e4c65" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/idEditText"
-        android:id="@+id/idRVCurrencies"
-        />
+
 
     <ProgressBar
         android:layout_width="wrap_content"
