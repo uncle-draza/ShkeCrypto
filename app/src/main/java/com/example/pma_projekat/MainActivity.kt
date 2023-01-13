@@ -1,5 +1,6 @@
 package com.example.pma_projekat
 
+import android.content.Intent
 import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -23,7 +24,7 @@ import org.json.JSONException
 import org.json.JSONObject
 import java.text.DecimalFormat
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), RecyclerViewInterface {
 
     private lateinit var searchEdit: EditText
     private lateinit var currenciesRV: RecyclerView
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         
         currencyRVModelArrayList = arrayListOf<CurrencyRVModel>()
-        currencyRVAdapter = CurrencyRVAdapter(currencyRVModelArrayList,this)
+        currencyRVAdapter = CurrencyRVAdapter(currencyRVModelArrayList,this, this)
         currenciesRV.layoutManager = LinearLayoutManager(this)
         currenciesRV.adapter = currencyRVAdapter
 
@@ -137,6 +138,14 @@ class MainActivity : AppCompatActivity() {
         }
 
         requestQueue.add(jsonObjectRequest)
+
+    }
+
+    override fun onItemClick(position: Int) {
+        val i = Intent(this, DetailActivity::class.java)
+        i.putExtra("SYMBOL", currencyRVModelArrayList[position].symbol)
+        i.putExtra("NAME", currencyRVModelArrayList[position].name)
+        startActivity(i)
 
     }
 }
