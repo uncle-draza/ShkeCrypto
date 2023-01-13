@@ -42,15 +42,15 @@ class CurrencyRVAdapter(currencyRVModelArrayList: ArrayList<CurrencyRVModel>, co
         Picasso.get().load(currencyRVModel.logoURL).into(holder.currencyLogo)
         holder.change1hTV.text = currencyRVModel.change1h
 
-        if(currencyRVModel.change1hNum.toDouble()<0){
-            holder.changeIncicator.scaleY = -1f
-            holder.changeIncicator.setColorFilter(context.resources.getColor(R.color.digital_red))
+        if(currencyRVModel.change1hNum <0){
+            holder.changeIndicator.scaleY = -1f
+            holder.changeIndicator.setColorFilter(context.resources.getColor(R.color.digital_red))
             holder.change1hTV.setTextColor(Color.parseColor("#e44b4a"))
         }
         else{
-            holder.changeIncicator.setColorFilter(context.resources.getColor(R.color.digital_green))
+            holder.changeIndicator.setColorFilter(context.resources.getColor(R.color.digital_green))
             holder.change1hTV.setTextColor(Color.parseColor("#43d75e"))
-            holder.changeIncicator.scaleY = 1f
+            holder.changeIndicator.scaleY = 1f
         }
 
 
@@ -66,7 +66,7 @@ class CurrencyRVAdapter(currencyRVModelArrayList: ArrayList<CurrencyRVModel>, co
         var idTV: TextView
         var currencyLogo: ImageView
         var change1hTV: TextView
-        var changeIncicator: ImageView
+        var changeIndicator: ImageView
 
         init {
             currencyNameTV = itemView.findViewById(R.id.idTVCurrencyName)
@@ -75,7 +75,7 @@ class CurrencyRVAdapter(currencyRVModelArrayList: ArrayList<CurrencyRVModel>, co
             idTV = itemView.findViewById(R.id.currencyID)
             currencyLogo = itemView.findViewById(R.id.currencyLogo)
             change1hTV = itemView.findViewById(R.id.currencyChangePercentage)
-            changeIncicator = itemView.findViewById(R.id.changeIndicator)
+            changeIndicator = itemView.findViewById(R.id.changeIndicator)
             itemView.setOnClickListener(this)
         }
 

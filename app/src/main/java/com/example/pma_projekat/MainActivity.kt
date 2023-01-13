@@ -111,14 +111,32 @@ class MainActivity : AppCompatActivity(), RecyclerViewInterface {
                         var price:Double = USD.getDouble("price")
                         var urlDoSlike: String = "https://raw.githubusercontent.com/uncle-draza/crypto-logos/master/128x128-dark-mode/" + symbol  +".png"
                         var change1h: Double = USD.getDouble("percent_change_1h")
+                        var change24h: Double = USD.getDouble("percent_change_24h")
+                        var change7d: Double = USD.getDouble("percent_change_7d")
+                        var lastUpdated: String = dataObj.getString("last_updated")
                         lateinit var change1hString:String
+                        lateinit var change24hString:String
+                        lateinit var change7dString:String
+
                         if(change1h>0){
                             change1hString = "+" + df3.format(change1h) + " %"
                         }else{
                             change1hString = df3.format(change1h) + " %"
                         }
 
-                        currencyRVModelArrayList.add(CurrencyRVModel(name,symbol,price,id,urlDoSlike,change1hString,change1h))
+                        if(change24h>0){
+                            change24hString = "+" + df3.format(change24h) + " %"
+                        }else{
+                            change24hString = df3.format(change24h) + " %"
+                        }
+
+                        if(change7d>0){
+                            change7dString = "+" + df3.format(change7d) + " %"
+                        }else{
+                            change7dString = df3.format(change7d) + " %"
+                        }
+
+                        currencyRVModelArrayList.add(CurrencyRVModel(name,symbol,price,id,urlDoSlike,change1hString,change1h,change24hString,change24h,change7dString,change7d,lastUpdated))
                     }
                     currencyRVAdapter.notifyDataSetChanged()
                 }catch (e: JSONException){
@@ -145,6 +163,12 @@ class MainActivity : AppCompatActivity(), RecyclerViewInterface {
         val i = Intent(this, DetailActivity::class.java)
         i.putExtra("SYMBOL", currencyRVModelArrayList[position].symbol)
         i.putExtra("NAME", currencyRVModelArrayList[position].name)
+        i.putExtra("PRICE", currencyRVModelArrayList[position].price)
+        i.putExtra("LOGO_URL", currencyRVModelArrayList[position].logoURL)
+        i.putExtra("CHANGE_1H", currencyRVModelArrayList[position].change1h)
+        i.putExtra("CHANGE_24H", currencyRVModelArrayList[position].change24h)
+        i.putExtra("CHANGE_7D", currencyRVModelArrayList[position].change7d)
+        i.putExtra("LAST_UPDATED", currencyRVModelArrayList[position].lastUpdated)
         startActivity(i)
 
     }

@@ -9,17 +9,17 @@
 
     <ImageView
         android:id="@+id/imageViewDetailLogo"
-        android:layout_width="264dp"
-        android:layout_height="237dp"
+        android:layout_width="189dp"
+        android:layout_height="162dp"
         android:adjustViewBounds="true"
         android:cropToPadding="false"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-         />
+        app:layout_constraintVertical_bias="0.076" />
 
     <TextView
         android:id="@+id/textViewDetailSymbol"
@@ -31,16 +31,17 @@
         android:textAlignment="center"
         android:textColor="#D2B1BE"
         android:textSize="32sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.332" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewDetailLogo"
+        app:layout_constraintVertical_bias="0.051" />
 
     <TextView
         android:id="@+id/textViewDetailName"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
+        android:layout_width="319dp"
+        android:layout_height="46dp"
         android:fontFamily="sans-serif-light"
         android:text="Currency Name"
         android:textAlignment="center"
@@ -50,6 +51,121 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewDetailSymbol"
-        app:layout_constraintVertical_bias="0.016" />
+        app:layout_constraintVertical_bias="0.038" />
+
+    <TextView
+        android:id="@+id/textViewDetailPrice"
+        android:layout_width="211dp"
+        android:layout_height="46dp"
+        android:background="#00FF0000"
+        android:fontFamily="sans-serif-light"
+        android:text="$ 34567,34"
+        android:textAlignment="center"
+        android:textColor="#D2B1BE"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailName"
+        app:layout_constraintVertical_bias="0.026" />
+
+    <TextView
+        android:id="@+id/textViewChange7d"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change 7d: "
+        android:textColor="#D2B1BE"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewChange24h"
+        app:layout_constraintVertical_bias="0.054" />
+
+    <TextView
+        android:id="@+id/textViewChange24h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Change 24h: "
+        android:textColor="#D2B1BE"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewChange1h" />
+
+    <TextView
+        android:id="@+id/textViewChange1h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change 1h: "
+        android:textColor="#D2B1BE"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailPrice"
+        app:layout_constraintVertical_bias="0.11" />
+
+    <TextView
+        android:id="@+id/textViewLastUpdated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Last updated: 01.01.2015:23:12:55"
+        android:textColor="#D2B1BE"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailName"
+        app:layout_constraintVertical_bias="0.958" />
+
+    <ImageView
+        android:id="@+id/changeIndicator1h"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_toLeftOf="@id/textViewChange1h"
+        android:padding="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toEndOf="@+id/textViewChange1h"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailPrice"
+        app:layout_constraintVertical_bias="0.111"
+        app:srcCompat="@drawable/indicator_white" />
+
+    <ImageView
+        android:id="@+id/changeIndicator24h"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_toLeftOf="@id/textViewChange24h"
+        android:padding="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toEndOf="@+id/textViewChange24h"
+        app:layout_constraintTop_toBottomOf="@+id/changeIndicator1h"
+        app:layout_constraintVertical_bias="0.055"
+        app:srcCompat="@drawable/indicator_white" />
+
+    <ImageView
+        android:id="@+id/changeIndicator7d"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_toLeftOf="@id/textViewChange7d"
+        android:padding="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toEndOf="@+id/textViewChange7d"
+        app:layout_constraintTop_toBottomOf="@+id/changeIndicator24h"
+        app:layout_constraintVertical_bias="0.057"
+        app:srcCompat="@drawable/indicator_white" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
