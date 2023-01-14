@@ -1,3 +1,5 @@
+@file:Suppress("ConvertToStringTemplate")
+
 package com.example.pma_projekat
 
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +11,7 @@ import org.w3c.dom.Text
 import java.text.DecimalFormat
 
 private val df2 = DecimalFormat("#.##")
+private val logic = DetailActivityLogic()
 
 class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,9 +45,9 @@ class DetailActivity : AppCompatActivity() {
         symbolTextView.text = symbol
         priceTextView.text = "$ " + df2.format(price)
         Picasso.get().load(logo_url.replace("128x128-dark-mode","512x512-dark-mode")).into(logoImageView)
-        change1hTextView.text = "Change 1h:     " + change1h
-        change24hTextView.text ="Change 24h:  " + change24h
-        change7dTextView.text = "Change 7d:     " + change7d
+        change1hTextView.text = logic.formatText("1h", change1h)
+        change24hTextView.text = logic.formatText("24h", change24h)
+        change7dTextView.text = logic.formatText("7d", change7d)
         lastUpdatedTextView.text = "Last updated: " + lastUpdated.replace("T"," ")
 
         setIndicator(change1hIndicator,change1h)
