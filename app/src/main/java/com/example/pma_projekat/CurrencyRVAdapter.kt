@@ -81,7 +81,7 @@ class CurrencyRVAdapter(currencyRVModelArrayList: ArrayList<CurrencyRVModel>, co
 
         override fun onClick(v: View?) {
             if (recyclerViewInterface != null) {
-                var pos: Int = adapterPosition
+                var pos: Int = currencyRVModelArrayList[adapterPosition].idCurrency-1
                 if(pos != RecyclerView.NO_POSITION){
                     recyclerViewInterface.onItemClick(pos)
                 }
