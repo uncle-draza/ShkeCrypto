@@ -24,7 +24,7 @@ class CurrencyRVAdapter(currencyRVModelArrayList: ArrayList<CurrencyRVModel>, co
         this.recyclerViewInterface = recyclerViewInterface
     }
 
-    public fun filterList(filteredList: ArrayList<CurrencyRVModel>){
+    fun filterList(filteredList: ArrayList<CurrencyRVModel>){
         currencyRVModelArrayList = filteredList
         notifyDataSetChanged()
     }
@@ -52,8 +52,6 @@ class CurrencyRVAdapter(currencyRVModelArrayList: ArrayList<CurrencyRVModel>, co
             holder.change1hTV.setTextColor(Color.parseColor("#43d75e"))
             holder.changeIndicator.scaleY = 1f
         }
-
-
     }
     override fun getItemCount(): Int {
         return currencyRVModelArrayList.size
@@ -86,8 +84,6 @@ class CurrencyRVAdapter(currencyRVModelArrayList: ArrayList<CurrencyRVModel>, co
                     recyclerViewInterface.onItemClick(pos)
                 }
             }
-
-
         }
     }
 }

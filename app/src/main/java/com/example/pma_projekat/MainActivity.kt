@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity(), RecyclerViewInterface {
     
     private lateinit var currencyRVModelArrayList: ArrayList<CurrencyRVModel>
     private lateinit var currencyRVAdapter: CurrencyRVAdapter
-    private val df3 = DecimalFormat("#.###")
+    private val logic = MainActivityLogic()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,9 +48,7 @@ class MainActivity : AppCompatActivity(), RecyclerViewInterface {
         currenciesRV.layoutManager = LinearLayoutManager(this)
         currenciesRV.adapter = currencyRVAdapter
 
-
         getCurrencyData()
-
 
         searchEdit.addTextChangedListener(object : TextWatcher {
 
@@ -66,13 +64,7 @@ class MainActivity : AppCompatActivity(), RecyclerViewInterface {
                                        before: Int, count: Int) {
             }
         })
-
-
     }
-
-
-
-
 
     private fun filterCurrencies(currency: String){
         var filteredList = ArrayList<CurrencyRVModel>()
@@ -114,27 +106,10 @@ class MainActivity : AppCompatActivity(), RecyclerViewInterface {
                         var change24h: Double = USD.getDouble("percent_change_24h")
                         var change7d: Double = USD.getDouble("percent_change_7d")
                         var lastUpdated: String = dataObj.getString("last_updated")
-                        lateinit var change1hString:String
-                        lateinit var change24hString:String
-                        lateinit var change7dString:String
 
-                        if(change1h>0){
-                            change1hString = "+" + df3.format(change1h) + " %"
-                        }else{
-                            change1hString = df3.format(change1h) + " %"
-                        }
-
-                        if(change24h>0){
-                            change24hString = "+" + df3.format(change24h) + " %"
-                        }else{
-                            change24hString = df3.format(change24h) + " %"
-                        }
-
-                        if(change7d>0){
-                            change7dString = "+" + df3.format(change7d) + " %"
-                        }else{
-                            change7dString = df3.format(change7d) + " %"
-                        }
+                        var change1hString:String = logic.formatChange(change1h)
+                        var change24hString:String = logic.formatChange(change24h)
+                        var change7dString:String = logic.formatChange(change7d)
 
                         currencyRVModelArrayList.add(CurrencyRVModel(name,symbol,price,id,urlDoSlike,change1hString,change1h,change24hString,change24h,change7dString,change7d,lastUpdated))
                     }
