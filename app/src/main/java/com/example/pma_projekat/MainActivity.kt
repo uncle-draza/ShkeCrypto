@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity(), RecyclerViewInterface {
     private lateinit var currenciesRV: RecyclerView
     private lateinit var loadingPB: ProgressBar
     
-    private lateinit var currencyRVModelArrayList: ArrayList<CurrencyRVModel>
+    lateinit var currencyRVModelArrayList: ArrayList<CurrencyRVModel>
     private lateinit var currencyRVAdapter: CurrencyRVAdapter
     private val logic = MainActivityLogic()
 
@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity(), RecyclerViewInterface {
         })
     }
 
-    private fun filterCurrencies(currency: String){
+    fun filterCurrencies(currency: String){
         var filteredList = ArrayList<CurrencyRVModel>()
         for(item in currencyRVModelArrayList){
             if(item.name.lowercase().contains(currency.lowercase())){
@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity(), RecyclerViewInterface {
         }
     }
     
-    private fun getCurrencyData(){
+    fun getCurrencyData(){
 
         loadingPB.visibility = View.VISIBLE
         val url: String = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest" 
